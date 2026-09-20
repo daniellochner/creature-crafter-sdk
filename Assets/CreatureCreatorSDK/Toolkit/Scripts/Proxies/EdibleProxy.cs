@@ -5,8 +5,8 @@ namespace DanielLochner.CreatureCrafter.SDK
     public class EdibleProxy : ProxyBehaviour
     {
         public Diet diet = Diet.Omnivore;
-        public Vector2 minMaxHunger = new Vector2(0.25f, 0.5f);
-        public Vector2 minMaxHeal = new Vector2(15f, 20f);
+        public Vector2 minMaxHunger = new Vector2(0.5f, 0.75f);
+        public Vector2 minMaxHeal = new Vector2(50f, 75f);
 
         public override bool IsValid(out string error)
         {
