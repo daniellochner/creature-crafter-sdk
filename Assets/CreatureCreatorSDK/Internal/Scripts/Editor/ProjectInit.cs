@@ -10,7 +10,7 @@ using UnityEngine.Rendering;
 [InitializeOnLoad]
 public static class ProjectInit
 {
-	public const string SDKVersion = "1.9.4";
+	public const string SDKVersion = "1.9.6";
 	const string requiredVersion = "6000.1.17f1";
 
 	const string NavigationDefine = "UNITY_NAVIGATION";
