@@ -16,5 +16,11 @@ namespace DanielLochner.CreatureCrafter.SDK
         {
             Proxies.Remove(this);
         }
+
+        protected override void OnDrawGizmos()
+        {
+            base.OnDrawGizmos();
+            DrawSpacingGizmo<UnlockableBodyPartProxy>("body part");
+        }
     }
 }

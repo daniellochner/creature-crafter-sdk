@@ -8,6 +8,7 @@ namespace DanielLochner.CreatureCrafter.SDK
     {
         public SaveType Type;
         public DietType Diet;
+        public bool CanAttachExtremity;
         public int Complexity;
         public int Health;
         public float Weight;
