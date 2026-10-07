@@ -14,7 +14,7 @@ public static class PatternUtils
         {
             string dstPath = Path.Combine(patternPath, $"{patternName}.png");
             string dstAssetPath = ModdingUtils.ConvertGlobalPathToLocalPath(dstPath);
-            AssetDatabase.CopyAsset("Assets/CreatureCreatorSDK/Internal/Templates/Pattern.png", dstAssetPath);
+            AssetDatabase.CopyAsset("Assets/CreatureCrafterSDK/Internal/Templates/Pattern.png", dstAssetPath);
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
 

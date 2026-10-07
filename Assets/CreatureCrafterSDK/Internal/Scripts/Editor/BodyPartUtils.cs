@@ -14,7 +14,7 @@ public static class BodyPartUtils
         {
             string dstPath = Path.Combine(bodyPartPath, $"{bodyPartName}.prefab");
             string dstAssetPath = ModdingUtils.ConvertGlobalPathToLocalPath(dstPath);
-            AssetDatabase.CopyAsset("Assets/CreatureCreatorSDK/Internal/Templates/BodyPart.prefab", dstAssetPath);
+            AssetDatabase.CopyAsset("Assets/CreatureCrafterSDK/Internal/Templates/BodyPart.prefab", dstAssetPath);
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
         }

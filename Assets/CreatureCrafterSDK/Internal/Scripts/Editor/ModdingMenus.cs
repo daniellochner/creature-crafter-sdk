@@ -7,34 +7,34 @@ using UnityEngine;
 public class ModdingMenus : MonoBehaviour
 {
     #region General
-    [MenuItem("Creature Creator/Connect to Steam", priority = 101)]
+    [MenuItem("Creature Crafter/Connect to Steam", priority = 101)]
 	public static void ConnectToSteam()
 	{
 		EditorSteamManager.ConnectToSteam();
 	}
 
-	[MenuItem("Creature Creator/Locate Creature Creator", priority = 102)]
+	[MenuItem("Creature Crafter/Locate Creature Crafter", priority = 102)]
 	public static void LocateExe()
 	{
         ModdingUtils.SetApplicationPath();
 	}
 
-    [MenuItem("Creature Creator/Build", priority = 51)]
+    [MenuItem("Creature Crafter/Build", priority = 51)]
     public static void Build()
     {
         PerformOperation(BuildMap, BuildBodyPart, BuildPattern);
     }
-    [MenuItem("Creature Creator/Test", priority = 52)]
+    [MenuItem("Creature Crafter/Test", priority = 52)]
     public static void Test()
     {
         PerformOperation(TestMap, TestBodyPart, TestPattern);
     }
-    [MenuItem("Creature Creator/Build and Test", priority = 53)]
+    [MenuItem("Creature Crafter/Build and Test", priority = 53)]
     public static void BuildAndTest()
     {
         PerformOperation(BuildAndTestMap, BuildAndTestBodyPart, BuildAndTestPattern);
     }
-    [MenuItem("Creature Creator/Upload to Workshop", priority = 54)]
+    [MenuItem("Creature Crafter/Upload to Workshop", priority = 54)]
     public static void UploadToWorkshop()
     {
         PerformOperation(BuildAndUploadMap, BuildAndUploadBodyPart, BuildAndUploadPattern);
@@ -87,10 +87,10 @@ public class ModdingMenus : MonoBehaviour
         }
     }
 
-    [MenuItem("Creature Creator/Build", true)]
-    [MenuItem("Creature Creator/Test", true)]
-    [MenuItem("Creature Creator/Build and Test", true)]
-    [MenuItem("Creature Creator/Upload to Workshop", true)]
+    [MenuItem("Creature Crafter/Build", true)]
+    [MenuItem("Creature Crafter/Test", true)]
+    [MenuItem("Creature Crafter/Build and Test", true)]
+    [MenuItem("Creature Crafter/Upload to Workshop", true)]
     private static bool ValidateConfig()
     {
         return BodyPartConfig.GetSelected() != null || PatternConfig.GetSelected() != null || MapConfig.GetSelected() != null || MapConfig.GetCurrent() != null;
@@ -98,7 +98,7 @@ public class ModdingMenus : MonoBehaviour
     #endregion
 
     #region Map
-    [MenuItem("Creature Creator/New/Map", priority = 1)]
+    [MenuItem("Creature Crafter/New/Map", priority = 1)]
     public static void NewMap()
     {
         MappingUtils.NewMap();
@@ -146,7 +146,7 @@ public class ModdingMenus : MonoBehaviour
     }
     private static void SetupLinkedItem(MapConfig.LinkedItem item)
     {
-        string persistentDataPath = Path.Combine(Application.persistentDataPath, "..", "..", "Daniel Lochner", "Creature Creator");
+        string persistentDataPath = Path.Combine(Application.persistentDataPath, "..", "..", "Daniel Lochner", "Creature Crafter");
 
         string modsDir = Path.Combine(persistentDataPath, "mods");
         if (!Directory.Exists(modsDir))
@@ -201,7 +201,7 @@ public class ModdingMenus : MonoBehaviour
     #endregion
 
     #region Body Part
-    [MenuItem("Creature Creator/New/Body Part", priority = 2)]
+    [MenuItem("Creature Crafter/New/Body Part", priority = 2)]
     public static void NewBodyPart()
     {
         BodyPartUtils.NewBodyPart();
@@ -232,7 +232,7 @@ public class ModdingMenus : MonoBehaviour
     #endregion
 
     #region Pattern
-    [MenuItem("Creature Creator/New/Pattern", priority = 3)]
+    [MenuItem("Creature Crafter/New/Pattern", priority = 3)]
     public static void NewPattern()
     {
         PatternUtils.NewPattern();

@@ -23,7 +23,7 @@ public static class MappingUtils
         {
             string dstPath = Path.Combine(mapPath, $"{mapName}.unity");
             string dstAssetPath = ModdingUtils.ConvertGlobalPathToLocalPath(dstPath);
-            AssetDatabase.CopyAsset("Assets/CreatureCreatorSDK/Internal/Templates/Map.unity", dstAssetPath);
+            AssetDatabase.CopyAsset("Assets/CreatureCrafterSDK/Internal/Templates/Map.unity", dstAssetPath);
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
             EditorSceneManager.OpenScene(dstAssetPath);

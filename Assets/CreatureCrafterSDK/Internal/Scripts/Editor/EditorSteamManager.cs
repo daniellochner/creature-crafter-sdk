@@ -71,7 +71,7 @@ public static class EditorSteamManager
 
 			case RuntimePlatform.WindowsEditor:
 			default:
-				return "Creature Creator.exe";
+				return "Creature Crafter.exe";
 		}
 	}
 }

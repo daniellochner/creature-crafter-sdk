@@ -107,7 +107,7 @@ public static class ProjectInit
 			return false;
 		}
 
-		Debug.Log($"Creature Creator SDK requires {NavigationPackageSpec}. Installing through Unity Package Manager...");
+		Debug.Log($"Creature Crafter SDK requires {NavigationPackageSpec}. Installing through Unity Package Manager...");
 		SessionState.SetBool(NavigationInstallSessionKey, true);
 		navigationInstallRequest = Client.Add(NavigationPackageSpec);
 		EditorApplication.update += PollNavigationPackageInstall;
@@ -183,7 +183,7 @@ public static class ProjectInit
 
 		if (!string.IsNullOrEmpty(version) && IsVersionOutOfDate(SDKVersion, version))
 		{
-            if (EditorUtility.DisplayDialog("Error", $"The current installed Creature Creator SDK (v{SDKVersion}) is out of date. Please download the new version v{version}!", "New Version"))
+            if (EditorUtility.DisplayDialog("Error", $"The current installed Creature Crafter SDK (v{SDKVersion}) is out of date. Please download the new version v{version}!", "New Version"))
             {
                 Application.OpenURL("https://github.com/daniellochner/creature-creator-sdk/releases");
             }
