@@ -179,13 +179,13 @@ public static class ProjectInit
 
 	static async void CheckSDKVersion()
 	{
-        var version = await GitHubVersionUtility.GetLatestReleaseAsync("daniellochner", "creature-creator-sdk");
+        var version = await GitHubVersionUtility.GetLatestReleaseAsync("daniellochner", "creature-crafter-sdk");
 
 		if (!string.IsNullOrEmpty(version) && IsVersionOutOfDate(SDKVersion, version))
 		{
             if (EditorUtility.DisplayDialog("Error", $"The current installed Creature Crafter SDK (v{SDKVersion}) is out of date. Please download the new version v{version}!", "New Version"))
             {
-                Application.OpenURL("https://github.com/daniellochner/creature-creator-sdk/releases");
+                Application.OpenURL("https://github.com/daniellochner/creature-crafter-sdk/releases");
             }
         }
     }
