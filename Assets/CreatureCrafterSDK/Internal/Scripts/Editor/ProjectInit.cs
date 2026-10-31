@@ -11,7 +11,7 @@ using UnityEngine.Rendering;
 public static class ProjectInit
 {
 	public const string SDKVersion = "1.9.6";
-	const string requiredVersion = "6000.1.17f1";
+	const string requiredVersion = "6000.3.27f2";
 
 	const string NavigationDefine = "UNITY_NAVIGATION";
 	const string NavigationMarkerType = "Unity.AI.Navigation.NavMeshSurface, Unity.AI.Navigation";
