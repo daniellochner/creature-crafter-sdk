@@ -167,13 +167,18 @@ public static class ModdingUtils
         string bundleBuildPath = GetBundleBuildPath(config) + $"_{platform}";
         Directory.CreateDirectory(bundleBuildPath);
 
-        AssetBundleBuilder.AssignBundleNames(config);
+        try
+        {
+            AssetBundleBuilder.AssignBundleNames(config);
 
-        BuildTarget buildTarget = GetBuildTarget(platform);
+            BuildTarget buildTarget = GetBuildTarget(platform);
 
-        AssetBundleBuilder.BuildAssetBundles(config, bundleBuildPath, buildTarget);
-
-        AssetBundleBuilder.ClearAllAssetBundleNames();
+            AssetBundleBuilder.BuildAssetBundles(config, bundleBuildPath, buildTarget);
+        }
+        finally
+        {
+            AssetBundleBuilder.ClearAllAssetBundleNames();
+        }
         foreach (var file in new DirectoryInfo(bundleBuildPath).GetFiles("*.manifest"))
         {
             File.Delete(file.FullName);

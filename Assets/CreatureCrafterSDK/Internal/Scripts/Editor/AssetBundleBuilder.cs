@@ -9,7 +9,11 @@ public static class AssetBundleBuilder
 {
 	public static void BuildAssetBundles(ItemConfig config, string buildPath, BuildTarget buildTarget)
 	{
-        BuildPipeline.BuildAssetBundles(buildPath, GetAssetBuilds(config.bundleName), BuildAssetBundleOptions.None, buildTarget);
+        AssetBundleManifest manifest = BuildPipeline.BuildAssetBundles(buildPath, GetAssetBuilds(config.bundleName), BuildAssetBundleOptions.None, buildTarget);
+        if (manifest == null)
+        {
+            throw new InvalidOperationException($"AssetBundle build failed for '{config.name}' ({buildTarget}). Check the Unity Console for details.");
+        }
     }
 
     private static AssetBundleBuild[] GetAssetBuilds(string bundleName)
